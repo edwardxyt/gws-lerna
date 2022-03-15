@@ -1,11 +1,12 @@
 {
   "name": "@edwardxyt/moduleb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "db7d311960ea9db517908b95cb47cd22f0d142c0"
 }
