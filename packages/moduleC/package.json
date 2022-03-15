@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/modulec",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "> TODO: description",
   "author": "夏宇霆 <56833517@qq.com>",
   "homepage": "",
@@ -20,8 +20,6 @@
     "access": "public"
   },
   "gitHead": "26fc3b02486331efb195502d617a076b4b56fdf9",
-  "devDependencies": {
-  },
   "dependencies": {
     "lodash": "^4.17.21"
   }
