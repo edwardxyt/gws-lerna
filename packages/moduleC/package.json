@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/modulec",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "author": "夏宇霆 <56833517@qq.com>",
   "homepage": "",
@@ -16,5 +16,8 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "db7d311960ea9db517908b95cb47cd22f0d142c0"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "66206bee81fbb46a5e7295f0e0eada9dcaf8783e"
 }
