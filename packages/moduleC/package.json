@@ -1,0 +1,19 @@
+{
+  "name": "@edwardxyt/modulec",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "夏宇霆 <56833517@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/moduleC.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
