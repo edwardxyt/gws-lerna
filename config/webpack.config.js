@@ -8,7 +8,8 @@ module.exports = {
         filename: 'moduleA.js',
         path: `/Users/xiayuting/workBase/gws-lerna/packages/moduleA/lib`,
         // export to AMD, CommonJS, or window
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+        library: 'moduleA'
     },
     mode: 'production',
 }
