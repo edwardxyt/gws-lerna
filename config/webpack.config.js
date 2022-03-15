@@ -3,12 +3,12 @@ const fs = require("fs");
 const path = require('path');
 
 module.exports = {
-    entry: './add.js',
+    entry: './packages/moduleA/index.js',
     output: {
-        filename: './dist/add.js',
+        filename: 'moduleA.js',
+        path: `/Users/xiayuting/workBase/gws-lerna/packages/moduleA/lib`,
         // export to AMD, CommonJS, or window
-        libraryTarget: 'umd',
-        // the name exported to window
-        library: 'add'
-    }
+        libraryTarget: 'umd'
+    },
+    mode: 'production',
 }
