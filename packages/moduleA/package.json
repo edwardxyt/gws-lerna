@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/modulea",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "lib/moduleA.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "gitHead": "26fc3b02486331efb195502d617a076b4b56fdf9",
   "dependencies": {
-    "@edwardxyt/moduleb": "^0.0.9",
+    "@edwardxyt/moduleb": "^0.0.10",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21"
   }
