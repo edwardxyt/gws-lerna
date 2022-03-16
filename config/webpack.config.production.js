@@ -122,29 +122,9 @@ module.exports = async () => {
                                 },
                             },
                         },
-                        /*{
+                        {
                             loader: 'postcss-loader',
-                            options: {
-                                postcssOptions: {
-                                    ident: 'postcss',
-                                    config: false,
-                                    plugins: [
-                                        'postcss-flexbugs-fixes',
-                                        [
-                                            'postcss-preset-env',
-                                            {
-                                                autoprefixer: {
-                                                    flexbox: 'no-2009',
-                                                },
-                                                stage: 3,
-                                            },
-                                        ],
-                                        'postcss-normalize',
-                                    ],
-                                },
-                                sourceMap: true,
-                            },
-                        },*/
+                        },
                     ],
                 },
                 // webpack5 已内置资源模块，因此无需再下载 file-loader、url-loader
