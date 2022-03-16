@@ -13,6 +13,12 @@ module.exports = {
     },
     mode: 'production',
     externals: {
+        lodash: {
+            commonjs: 'lodash',
+            commonjs2: 'lodash',
+            amd: 'lodash',
+            root: '_', // 指向全局变量
+        },
         react: {
             commonjs: 'react',
             commonjs2: 'react',
