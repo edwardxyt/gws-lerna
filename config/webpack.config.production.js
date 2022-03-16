@@ -8,7 +8,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin'); //压缩css
 const TerserPlugin = require('terser-webpack-plugin'); // 压缩js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //提取到.css文件里
 const CompressionWebpackPlugin = require('compression-webpack-plugin'); //gzip压缩
-const { GenerateSW } = require('workbox-webpack-plugin'); // 引入 PWA 插件
 const chalk = require('chalk');
 const log = console.log;
 
@@ -100,44 +99,13 @@ module.exports = async () => {
                             loader: 'babel-loader',
                             options: { cacheDirectory: true }, // cacheDirectory：babel-loader 在执行的时候，可能会产生一些运行期间重复的公共文件，造成代码体积大冗余，同时也会减慢编译效率，所以开启该配置将这些公共文件缓存起来，下次编译就会加快很多
                         },
-                    ],
-                    exclude: /node_modules/,
-                },
-            ],
-        },
-    };
-};
-
-
-
-/*
-
-module.exports = async () => {
-    return {
-
-
-
-
-
-
-
-        module: {
-            strictExportPresence: true,  // 将缺失的导出提示成错误而不是警告
-            rules: [
-                {
-                    test: /\.(tsx?|jsx|js)$/,
-                    use: [
-                        {
-                            loader: 'babel-loader',
-                            options: { cacheDirectory: true }, // cacheDirectory：babel-loader 在执行的时候，可能会产生一些运行期间重复的公共文件，造成代码体积大冗余，同时也会减慢编译效率，所以开启该配置将这些公共文件缓存起来，下次编译就会加快很多
-                        },
                         {
                             loader: 'ts-loader',
                         },
                     ],
                     exclude: /node_modules/,
                 },
-                {
+                /*{
                     test: /\.ejs$/,
                     loader: 'ejs-loader',
                     options: {
@@ -200,9 +168,26 @@ module.exports = async () => {
                 {
                     test: /\.(eot|svg|ttf|woff|woff2?)$/,
                     type: 'asset/resource', // asset/resource：将资源分割为单独的文件，并导出url，就是之前的 file-loader的功能
-                },
+                },*/
             ],
         },
+    };
+};
+
+
+
+/*
+
+module.exports = async () => {
+    return {
+
+
+
+
+
+
+
+
         plugins: [
             // 打包后在.js/.css页头的时间
             // hash         :[hash]
