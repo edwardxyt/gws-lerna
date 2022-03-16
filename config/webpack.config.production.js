@@ -105,13 +105,6 @@ module.exports = async () => {
                     ],
                     exclude: /node_modules/,
                 },
-                /*{
-                    test: /\.ejs$/,
-                    loader: 'ejs-loader',
-                    options: {
-                        esModule: false,
-                    },
-                },
                 {
                     test: /\.(le|c)ss$/,
                     use: [
@@ -168,7 +161,7 @@ module.exports = async () => {
                 {
                     test: /\.(eot|svg|ttf|woff|woff2?)$/,
                     type: 'asset/resource', // asset/resource：将资源分割为单独的文件，并导出url，就是之前的 file-loader的功能
-                },*/
+                },
             ],
         },
     };
