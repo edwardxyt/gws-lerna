@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/modulea",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "main": "lib/moduleA.js",
   "scripts": {
@@ -13,12 +13,12 @@
   },
   "gitHead": "26fc3b02486331efb195502d617a076b4b56fdf9",
   "peerDependencies": {
+    "lodash": "^4.17.21",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "lodash": "^4.17.21"
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@edwardxyt/moduleb": "^0.0.11",
+    "@edwardxyt/moduleb": "^0.0.12",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
