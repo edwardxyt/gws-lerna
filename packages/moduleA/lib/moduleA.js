@@ -30,15 +30,15 @@
         return (() => {
             n.r(u), n.d(u, {default: () => a});
             var e = n(607), t = n.n(e), r = n(359), o = n.n(r);
-            t().chunk(["a", "b", "c", "d"], 2);
-
-            function a() {
-                var e = (0, r.useState)(0), t = e[0], n = e[1];
-                return o().createElement("div", null, o().createElement("p", null, "You clicked ", t, " times"), o().createElement("button", {
-                    onClick: function () {
-                        return n(t + 1)
+            const a = function (e) {
+                var n = e.name, u = (0, r.useState)(0), a = u[0], c = u[1];
+                return (0, r.useEffect)((function () {
+                    t().chunk(["a", "b", "c", "d"], 2)
+                }), []), o().createElement("div", null, o().createElement("p", null, "You clicked ", a, " times"), o().createElement("button", {
+                    onClick: function (e) {
+                        c(a + 1)
                     }
-                }, "Click me"))
+                }, "Click me ", {name: n}))
             }
         })(), u
     })()

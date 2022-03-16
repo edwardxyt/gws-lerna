@@ -1,20 +1,34 @@
 import _ from 'lodash'
 // import year from "@edwardxyt/moduleb";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-var a = _.chunk(['a', 'b', 'c', 'd'], 2);
-console.log(a)
+interface IProps {
+    name: string
+}
 
-export default function Example() {
-    // 声明一个新的叫做 “count” 的 state 变量
-    const [count, setCount] = useState(0);
+const App: React.FC<IProps> = (props) => {
+    const {name} = props;
+    const [count, setCount] = useState<number>(0)
 
+    const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>): void => {
+        setCount(count + 1)
+    };
+
+    useEffect(
+        () => {
+            let a = _.chunk(['a', 'b', 'c', 'd'], 2);
+            console.log(a)
+        },
+        []
+    );
     return (
         <div>
             <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>
-                Click me
+            <button onClick={onClickHandler}>
+                Click me {{name}}
             </button>
         </div>
     );
 }
+
+export default App;
