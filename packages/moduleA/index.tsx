@@ -10,10 +10,6 @@ const App: React.FC<IProps> = (props) => {
     const {name} = props;
     const [count, setCount] = useState<number>(0)
 
-    const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>): void => {
-        setCount(count + 1)
-    };
-
     useEffect(
         () => {
             let a = _.chunk(['a', 'b', 'c', 'd'], 2);
@@ -24,7 +20,7 @@ const App: React.FC<IProps> = (props) => {
     return (
         <div>
             <p>You clicked {count} times</p>
-            <button onClick={onClickHandler}>
+            <button onClick={() => setCount(count + 1)}>
                 Click me {{name}}
             </button>
         </div>

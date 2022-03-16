@@ -35,8 +35,8 @@
                 return (0, r.useEffect)((function () {
                     t().chunk(["a", "b", "c", "d"], 2)
                 }), []), o().createElement("div", null, o().createElement("p", null, "You clicked ", a, " times"), o().createElement("button", {
-                    onClick: function (e) {
-                        c(a + 1)
+                    onClick: function () {
+                        return c(a + 1)
                     }
                 }, "Click me ", {name: n}))
             }
