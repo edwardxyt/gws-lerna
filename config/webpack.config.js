@@ -12,6 +12,20 @@ module.exports = {
         library: 'moduleA'
     },
     mode: 'production',
+    externals: {
+        react: {
+            commonjs: 'react',
+            commonjs2: 'react',
+            amd: 'react',
+            root: 'React',
+        },
+        'react-dom': {
+            commonjs: 'react-dom',
+            commonjs2: 'react-dom',
+            amd: 'react-dom',
+            root: 'ReactDOM',
+        },
+    },
     module: {
         strictExportPresence: true,  // 将缺失的导出提示成错误而不是警告
         rules: [
