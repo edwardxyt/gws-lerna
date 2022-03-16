@@ -122,7 +122,7 @@ module.exports = async () => {
                                 },
                             },
                         },
-                        {
+                        /*{
                             loader: 'postcss-loader',
                             options: {
                                 postcssOptions: {
@@ -144,7 +144,7 @@ module.exports = async () => {
                                 },
                                 sourceMap: true,
                             },
-                        },
+                        },*/
                     ],
                 },
                 // webpack5 已内置资源模块，因此无需再下载 file-loader、url-loader
@@ -164,6 +164,13 @@ module.exports = async () => {
                 },
             ],
         },
+        plugins: [
+            // 和 style-loader 功能一样，只是打包后会单独生成 css 文件而非直接写在 html 文件中，用于生产环境，开发环境不需要另外生成文件使用 style-loader 即可
+            new MiniCssExtractPlugin({
+                filename: `${app_config.entry}.min.css`,
+                chunkFilename: "[id].min.css"
+            }),
+        ]
     };
 };
 
