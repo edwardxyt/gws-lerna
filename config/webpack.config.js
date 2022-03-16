@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require('path');
 
 module.exports = {
-    entry: './packages/moduleA/index.js',
+    entry: './packages/moduleA/index.tsx',
     output: {
         filename: 'moduleA.js',
         path: `/Users/xiayuting/workBase/gws-lerna/packages/moduleA/lib`,
