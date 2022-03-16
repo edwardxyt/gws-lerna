@@ -5,7 +5,8 @@ import React, { useState } from 'react';
 var a = _.chunk(['a', 'b', 'c', 'd'], 2);
 console.log(a)
 
-export default function Example() {
+
+const App: React.FC<any> = (props) => {
     // 声明一个新的叫做 “count” 的 state 变量
     const [count, setCount] = useState(0);
 
@@ -18,3 +19,5 @@ export default function Example() {
         </div>
     );
 }
+
+export default App;
