@@ -1,4 +1,4 @@
-const webpack_production_config = require('../config/webpack.config.production.js');
+const webpack_production_config = require('../config/webpack.production.config.js');
 const webpack = require('webpack');
 const chalk = require('chalk');
 const log = console.log;

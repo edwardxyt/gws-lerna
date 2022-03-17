@@ -2,17 +2,15 @@ const webpack = require('webpack');
 const fs = require("fs");
 const path = require('path');
 const dayjs = require('dayjs');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin'); //复制静态资源
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin'); //压缩css
 const TerserPlugin = require('terser-webpack-plugin'); // 压缩js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //提取到.css文件里
-const CompressionWebpackPlugin = require('compression-webpack-plugin'); //gzip压缩
 const chalk = require('chalk');
 const log = console.log;
 
 // 加载全局配置文件
-log(chalk.white('development:webpack') + ' - ' + chalk.green('加载全局文件'));
+log(chalk.white('webpack:production') + ' - ' + chalk.green('加载全局文件'));
 
 let rootDir = path.resolve(__dirname, '../');
 let app_config = require('.')(rootDir);
@@ -38,7 +36,7 @@ module.exports = async () => {
         cache: {
             type: 'filesystem',
             version: app_config.environmentHash,
-            cacheDirectory: path.resolve(app_config.node_module_dir, '.cache'),
+            cacheDirectory: path.resolve(app_config.node_module_dir, '.cacheP'),
             store: 'pack',
             buildDependencies: {
                 defaultWebpack: ['webpack/lib/'],

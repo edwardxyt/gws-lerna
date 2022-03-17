@@ -13,6 +13,7 @@ let app_config = (rootDir = '/', environment= 'production') => {
   let debugging = env !== 'production';
   if (!_.isEmpty(entry) && !_.isNull(entry)) {
   log(`
+    ${chalk.blue(`== 动态配置项 ==`)}
     根路径: ${chalk.red(`${rootDir}`)}
     模块: ${chalk.green(`${entry}`)}
     启动环境: ${chalk.yellow(`${env}`)}
@@ -35,14 +36,13 @@ let app_config = (rootDir = '/', environment= 'production') => {
       IP: ip.address(),
       main: [path.join(rootDir, 'packages', `${entry}`, 'index.tsx')], // 启动入口文件
       debug: debugging,
-      src: path.resolve(rootDir, 'src'), // 源码目录
       dist: path.join(rootDir, 'dist'), // 生产编译目录
       distHtml: path.join(rootDir, 'dist', entry, 'index.html'),
       node_module_dir: path.resolve(rootDir, 'node_modules'), // 依赖模块目录
       template_path: path.join(
         rootDir,
-        'src',
-        `${entry}`,
+        'packages',
+         entry,
         '/templates',
         'index.ejs'
       ),
@@ -70,7 +70,27 @@ let app_config = (rootDir = '/', environment= 'production') => {
       // 逻辑代码  :      common
       // ----------------------------------
       library: {
-
+        chartsVendor: {
+          test: /[\\/]node_modules[\\/](highcharts|highcharts-react-official)[\\/]/,
+          priority: 100,
+        },
+        reactVendor: {
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|mobx-react|mobx-react-lite)[\\/]/,
+          priority: 90,
+        },
+        antdVendor: {
+          test: /[\\/]node_modules[\\/](antd|antd-mobile|@tanem\/react-nprogress|classnames)[\\/]/,
+          priority: 70,
+        },
+        utilsVendor: {
+          test: /[\\/]node_modules[\\/](axios|fetch-jsonp|big.js|js-cookie|crypto-js|dayjs|qiankun|ua-parser-js|uuid|vconsole|md5)[\\/]/,
+          priority: 60,
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          priority: 50, // 该配置项是设置处理的优先级，数值越大越优先处理
+        },
       },
 
       // ----------------------------------
