@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/modulea",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "",
   "main": "lib/moduleA.js",
   "scripts": {
