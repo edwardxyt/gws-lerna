@@ -23,7 +23,7 @@ module.exports = async () => {
             app: [...app_config.main],
         },
         output: {
-            publicPath: app_config.cdn_path || '/', // 需要cdn 就开启
+            publicPath: '/', // https://oss.hualala.com/static/images/
             filename: `${app_config.entry}.js`,
             path: `${app_config.libDir}`,
             libraryTarget: 'umd',
@@ -130,7 +130,7 @@ module.exports = async () => {
                 // webpack5 已内置资源模块，因此无需再下载 file-loader、url-loader
                 {
                     test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                    type: 'asset', // asset：自动选择导出为单独文件或者 dataURL形式（默认为8KB）. 之前有url-loader设置asset size limit 限制实现
+                    type: 'asset/inline',
                     parser: {
                         dataUrlCondition: {
                             // dataUrlCondition：指定资源大小（单位字节）
