@@ -9,7 +9,7 @@ import Logo from './asset/logo.svg';
 var a = _.chunk(['a', 'b', 'c', 'd'], 2);
 console.log(a)
 
-const App: React.FC<any> = (props) => {
+const MA: React.FC<any> = (props) => {
     // 声明一个新的叫做 “count” 的 state 变量
     const [count, setCount] = useState(1);
 
@@ -27,3 +27,5 @@ const App: React.FC<any> = (props) => {
 }
 
 export default App;
+
+export { MA };

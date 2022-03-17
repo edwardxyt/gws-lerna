@@ -1,5 +1,4 @@
-import App from '@edwardxyt/modulea';
-import { year } from '@edwardxyt/moduleb';
+import { MB, year } from '@edwardxyt/moduleb';
 import _ from 'lodash';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -12,7 +11,7 @@ const Root: React.FC<any> = props => {
     return (
         <div>
             <p>app {name}</p>
-            <App />
+            <MB></MB>
         </div>
     );
 };
