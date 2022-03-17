@@ -26,6 +26,4 @@ const MA: React.FC<any> = (props) => {
     );
 }
 
-export default App;
-
-export { MA };
+export default MA;
