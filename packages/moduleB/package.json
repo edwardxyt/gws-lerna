@@ -2,7 +2,7 @@
   "name": "@edwardxyt/moduleb",
   "version": "0.0.30",
   "description": "",
-  "main": "index.tsx",
+  "main": "lib/moduleB.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
