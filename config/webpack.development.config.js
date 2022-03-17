@@ -47,6 +47,8 @@ module.exports = async () => {
       path: `${app_config.dist}/${app_config.entry}`,
       chunkFilename: 'scripts/[name].[contenthash:8].chunk.js',
       assetModuleFilename: 'media/[name].[hash][ext]',
+      libraryTarget: 'umd',
+      library: `${app_config.entry}`
     },
     target: 'web', // 配置 package.json 的 browserslist 字段会导致 webpack-dev-server 的热更新功能直接失效，为了避免这种情况需要给 webpack 配上 target 属性
     devtool: 'cheap-module-source-map',  // inline-source-map
