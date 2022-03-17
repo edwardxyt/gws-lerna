@@ -129,45 +129,11 @@ module.exports = async () => {
                 },
                 // webpack5 已内置资源模块，因此无需再下载 file-loader、url-loader
                 {
-                    test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                    type: 'asset/inline',
-                    parser: {
-                        dataUrlCondition: {
-                            // dataUrlCondition：指定资源大小（单位字节）
-                            maxSize: 4 * 1024,
-                        },
-                    },
-                },
-                {
-                    test: /\.(eot|svg|ttf|woff|woff2?)$/,
-                    type: 'asset/resource', // asset/resource：将资源分割为单独的文件，并导出url，就是之前的 file-loader的功能
-                },
+                    test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+                    type: 'asset/inline'
+                }
             ],
         },
-        plugins: [
-            // 和 style-loader 功能一样，只是打包后会单独生成 css 文件而非直接写在 html 文件中，用于生产环境，开发环境不需要另外生成文件使用 style-loader 即可
-            new MiniCssExtractPlugin({
-                filename: `${app_config.entry}.min.css`,
-                chunkFilename: "[id].min.css"
-            }),
-        ]
-    };
-};
-
-
-
-/*
-
-module.exports = async () => {
-    return {
-
-
-
-
-
-
-
-
         plugins: [
             // 打包后在.js/.css页头的时间
             // hash         :[hash]
@@ -188,16 +154,10 @@ module.exports = async () => {
             }),
             // 允许创建一个在编译时可以配置的全局常量
             new webpack.DefinePlugin(app_config.inject),
-            // 使用ProvidePlugin加载的模块在使用时将不再需要import和require进行引入
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                'window.jQuery': 'jquery',
-            }),
             // 和 style-loader 功能一样，只是打包后会单独生成 css 文件而非直接写在 html 文件中，用于生产环境，开发环境不需要另外生成文件使用 style-loader 即可
             new MiniCssExtractPlugin({
-                filename: 'css/[name].[contenthash:8].css',
-                chunkFilename: 'css/[name].[contenthash:8].chunk.css',
+                filename: `${app_config.entry}.min.css`,
+                chunkFilename: "[id].min.css"
             }),
             // 打包时忽略本地化内容
             // Moment.js是一个非常流行的库，它捆绑了大型locale文件
@@ -206,67 +166,15 @@ module.exports = async () => {
                 resourceRegExp: /^\.\/locale$/,
                 contextRegExp: /moment$/,
             }),
-            // 使用模板引擎生成html
-            new HtmlWebpackPlugin({
-                title: '生成的HTML文档的标题',
-                filename: 'index.html',
-                template: app_config.template_path,
-                templateParameters: {
-                    foo: 'bar',
-                    COMPILED_AT: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-                    env: app_config.inject.__ENV__,
-                    debug: app_config.inject.__DEBUG__,
-                    api_path: app_config.inject.__API__,
-                    meta: '',
-                },
-                minify: {
-                    // 压缩 HTML 文件
-                    removeComments: true, // 移除 HTML 中的注释
-                    collapseWhitespace: true, // 删除空白符与换行符
-                    minifyCSS: true, // 压缩内联 css
-                    removeRedundantAttributes: true,
-                    useShortDoctype: true,
-                    removeEmptyAttributes: true,
-                    removeStyleLinkTypeAttributes: true,
-                    keepClosingSlash: true,
-                    minifyJS: true,
-                    minifyURLs: true,
-                },
-                inject: true, // true或'body'所有javascript资源都将放置在body元素的底部
-                // favicon: path.resolve('public/favicon.ico'),
-                chunks: [
-                    'chartsVendor',
-                    'reactVendor',
-                    'antdVendor',
-                    'utilsVendor',
-                    'vendors',
-                    'app',
-                ], // entry中的 app 入口才会被打包
-            }),
-            // gzip压缩
-            new CompressionWebpackPlugin({
-                filename: '[path][base].gz',
-                algorithm: 'gzip',
-                test: /\.(js|css)(\?.*)?$/i, // CSS并没有生效,因为提取mini-css-extract-plugin没提供此功能
-                threshold: 10240,
-                minRatio: 0.8,
-                deleteOriginalAssets: false, // 是否删除源文件，默认: false
-            }),
-            // 配置 PWA
-            new GenerateSW({
-                clientsClaim: true,
-                skipWaiting: true,
-            }),
             // 静态文件处理
             new CopyPlugin({
                 patterns: [
                     {
                         from: path.join(app_config.entryDir, 'README.md'),
-                        to: path.join(app_config.dist, app_config.entry),
+                        to: path.join(app_config.libDir),
                     },
                 ],
             }),
-        ],
-        performance: false, // Turn off performance processing
+        ]
     };
-};*/
+};
