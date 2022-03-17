@@ -1,4 +1,4 @@
-import * as App from '@edwardxyt/modulea';
+import App from '@edwardxyt/modulea';
 import { year } from '@edwardxyt/moduleb';
 import _ from 'lodash';
 import React from 'react';
