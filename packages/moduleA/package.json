@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/modulea",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "",
   "main": "lib/moduleA.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@edwardxyt/moduleb": "^0.0.22",
+    "@edwardxyt/moduleb": "^0.0.23",
     "antd": "^4.19.2",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
