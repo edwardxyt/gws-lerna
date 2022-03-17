@@ -170,44 +170,14 @@ module.exports = async () => {
             },
             {
               loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  ident: 'postcss',
-                  config: false,
-                  plugins: [
-                    'postcss-flexbugs-fixes',
-                    [
-                      'postcss-preset-env',
-                      {
-                        autoprefixer: {
-                          flexbox: 'no-2009',
-                        },
-                        stage: 3,
-                      },
-                    ],
-                    'postcss-normalize',
-                  ],
-                },
-                sourceMap: true,
-              },
             },
           ],
         },
         // webpack5 已内置资源模块，因此无需再下载 file-loader、url-loader
         {
-          test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-          type: 'asset', // asset：自动选择导出为单独文件或者 dataURL形式（默认为8KB）. 之前有url-loader设置asset size limit 限制实现
-          parser: {
-            dataUrlCondition: {
-              // dataUrlCondition：指定资源大小（单位字节）
-              maxSize: 4 * 1024,
-            },
-          },
-        },
-        {
-          test: /\.(eot|svg|ttf|woff|woff2?)$/,
-          type: 'asset/resource', // asset/resource：将资源分割为单独的文件，并导出url，就是之前的 file-loader的功能
-        },
+          test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+          type: 'asset/inline'
+        }
       ],
     },
     plugins: [

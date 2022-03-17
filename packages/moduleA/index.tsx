@@ -1,5 +1,4 @@
 import _ from 'lodash'
-// import year from "@edwardxyt/moduleb";
 import React, { useState } from 'react';
 import { Button } from 'antd';
 import './index.less';
