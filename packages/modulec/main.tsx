@@ -1,5 +1,5 @@
 import './index.less';
-import '../modulea/lib/moduleA.min.css';
+import '../modulea/lib/modulea.min.css';
 
 import _ from 'lodash';
 import React from 'react';

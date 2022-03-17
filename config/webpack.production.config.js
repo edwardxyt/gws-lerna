@@ -50,7 +50,7 @@ module.exports = async () => {
             level: 'none',
         },
         stats: {
-            preset: 'minimal',
+            preset: 'verbose',
             source: true,
             moduleTrace: true,
             errorDetails: true,
