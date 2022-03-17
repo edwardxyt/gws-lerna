@@ -20,6 +20,12 @@
     "access": "public"
   },
   "gitHead": "26fc3b02486331efb195502d617a076b4b56fdf9",
+  "config": {
+    "port": "9090",
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
   "peerDependencies": {
     "lodash": "^4.17.21",
     "react": "^17.0.2",
