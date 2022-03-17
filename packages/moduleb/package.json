@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/moduleb",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "",
   "main": "",
   "scripts": {
@@ -18,7 +18,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@edwardxyt/moduleb": "^0.0.32",
+    "@edwardxyt/moduleb": "^0.0.33",
     "antd": "^4.19.2",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
