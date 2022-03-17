@@ -6,8 +6,7 @@
   ],
   "scripts": {
     "start": "NODE_ENV='development' cross-env webpack server --config ./config/webpack.development.config",
-    "build": "NODE_ENV='production' cross-env webpack build --config ./config/webpack.production.config",
-    "compile": "NODE_ENV='production' cross-env node bin/compile"
+    "build": "NODE_ENV='production' cross-env webpack build --config ./config/webpack.production.config"
   },
   "devDependencies": {
     "lerna": "^4.0.0",

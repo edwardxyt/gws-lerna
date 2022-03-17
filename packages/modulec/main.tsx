@@ -1,11 +1,12 @@
 import './index.less';
 import '@edwardxyt/modulea/lib/modulea.min.css';
 
-import MA from '@edwardxyt/modulea';
-import { MB, year } from '@edwardxyt/moduleb';
 import _ from 'lodash';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
+
+import MA from '../modulea/index';
+import { MB, year } from '../moduleb/index';
 
 let a = _.chunk(['a', 'b', 'c', 'd'], 2);
 console.log(a, year);
