@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const MB: React.FC<any> = (props) => {
     // 声明一个新的叫做 “count” 的 state 变量
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(20);
 
     return (
         <div>
