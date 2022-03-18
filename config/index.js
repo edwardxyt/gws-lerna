@@ -110,26 +110,6 @@ let app_config = (rootDir = '/', environment= 'production') => {
         /^(dayjs|\$)$/i,
         /^(@babel\/runtime|\$)$/i,
       ],
-      // externals: {
-      //   lodash: {
-      //     commonjs: 'lodash',
-      //     commonjs2: 'lodash',
-      //     amd: 'lodash',
-      //     root: '_', // 指向全局变量
-      //   },
-      //   react: {
-      //     commonjs: 'react',
-      //     commonjs2: 'react',
-      //     amd: 'react',
-      //     root: 'React',
-      //   },
-      //   'react-dom': {
-      //     commonjs: 'react-dom',
-      //     commonjs2: 'react-dom',
-      //     amd: 'react-dom',
-      //     root: 'ReactDOM',
-      //   },
-      // },
 
       // ----------------------------------
       // resolve
@@ -140,9 +120,7 @@ let app_config = (rootDir = '/', environment= 'production') => {
       resolve: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
         alias: {
-          '@': path.join(rootDir, 'packages', entry),
-          'src': path.resolve(rootDir, 'src/'),
-          // '@edwardxyt': path.resolve(rootDir, 'node_modules/@edwardxyt/'),
+          'packages': path.join(rootDir, 'packages'),
         },
       },
 
