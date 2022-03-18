@@ -103,9 +103,11 @@ let app_config = (rootDir = '/', environment= 'production') => {
       // ----------------------------------
       externals: [
         // 正则表达式
+        /^(antd|\$)$/i,
         /^(react|\$)$/i,
         /^(react-dom|\$)$/i,
         /^(lodash|\$)$/i,
+        /^(dayjs|\$)$/i,
         /^(@babel\/runtime|\$)$/i,
       ],
       // externals: {
