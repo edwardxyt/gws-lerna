@@ -24,8 +24,13 @@ module.exports = async () => {
             publicPath: '/', // https://oss.hualala.com/static/images/
             filename: `${app_config.entry}.js`,
             path: `${app_config.libDir}`,
-            libraryTarget: 'umd',
-            library: `${app_config.entry}`
+            globalObject: 'this',
+            library: {
+                name: `${app_config.entry}`,
+                type: 'umd',
+                umdNamedDefine: true,
+                auxiliaryComment: '这里是插入的注释',
+            },
         },
         target: 'web', // 配置 package.json 的 browserslist 字段会导致 webpack-dev-server 的热更新功能直接失效，为了避免这种情况需要给 webpack 配上 target 属性
         bail: true,  // 在第一个错误出现时抛出失败结果，而不是容忍它。

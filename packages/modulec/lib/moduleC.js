@@ -3,6 +3,6 @@
 module.exports = modulec;
 
 function modulec() {
-    console.log('C')
+    console.log('C');
     // TODO
 }

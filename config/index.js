@@ -101,26 +101,32 @@ let app_config = (rootDir = '/', environment= 'production') => {
       // ** 主要用于模版引擎中 CDN 排除
       // 注意提取第三方库时，不能含有以下列表，否则将不会打包
       // ----------------------------------
-      externals: {
-        lodash: {
-          commonjs: 'lodash',
-          commonjs2: 'lodash',
-          amd: 'lodash',
-          root: '_', // 指向全局变量
-        },
-        react: {
-          commonjs: 'react',
-          commonjs2: 'react',
-          amd: 'react',
-          root: 'React',
-        },
-        'react-dom': {
-          commonjs: 'react-dom',
-          commonjs2: 'react-dom',
-          amd: 'react-dom',
-          root: 'ReactDOM',
-        },
-      },
+      externals: [
+        /^react\/.+$/,
+        /^react-dom\/.+$/,
+        /^lodash\/.+$/,
+        /^@babel\/runtime\/.+$/
+      ],
+      // externals: {
+      //   lodash: {
+      //     commonjs: 'lodash',
+      //     commonjs2: 'lodash',
+      //     amd: 'lodash',
+      //     root: '_', // 指向全局变量
+      //   },
+      //   react: {
+      //     commonjs: 'react',
+      //     commonjs2: 'react',
+      //     amd: 'react',
+      //     root: 'React',
+      //   },
+      //   'react-dom': {
+      //     commonjs: 'react-dom',
+      //     commonjs2: 'react-dom',
+      //     amd: 'react-dom',
+      //     root: 'ReactDOM',
+      //   },
+      // },
 
       // ----------------------------------
       // resolve
@@ -132,7 +138,8 @@ let app_config = (rootDir = '/', environment= 'production') => {
         extensions: ['.tsx', '.ts', '.js', '.json'],
         alias: {
           '@': path.join(rootDir, 'packages', entry),
-          src: path.resolve(rootDir, './src'),
+          'src': path.resolve(rootDir, 'src/'),
+          // '@edwardxyt': path.resolve(rootDir, 'node_modules/@edwardxyt/'),
         },
       },
 
