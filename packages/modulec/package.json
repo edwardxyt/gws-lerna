@@ -1,6 +1,6 @@
 {
   "name": "@edwardxyt/modulec",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "> TODO: description",
   "author": "夏宇霆 <56833517@qq.com>",
   "homepage": "",
@@ -32,8 +32,8 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@edwardxyt/modulea": "^0.0.35",
-    "@edwardxyt/moduleb": "^0.0.35",
+    "@edwardxyt/modulea": "^0.0.36",
+    "@edwardxyt/moduleb": "^0.0.36",
     "@types/classnames": "^2.3.1",
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.18",
