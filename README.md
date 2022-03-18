@@ -101,7 +101,7 @@ a组件（案例）导出了，一个hook react组件，引入less，图片base6
 b组件（案例）导出多个出口。`export { MB, year }`
 c组件 是完整的页面，目前没引router。可用于软链 a和b 展示和开发使用。
 
-#### npm scriots
+#### npm scripts
 ```node
 // 启动modulec项目 本地开发调试
 npm run start --ENTRY=modulec
@@ -113,7 +113,7 @@ npm run build --ENTRY=moduleb
 // --ENTRY=对应packages目录下文件夹名称
 ```
 
-#### Lerna scriots
+#### Lerna scripts
 ##### lerna create
 [loc]
 创建一个包，name包名，loc 位置可选
