@@ -102,10 +102,11 @@ let app_config = (rootDir = '/', environment= 'production') => {
       // 注意提取第三方库时，不能含有以下列表，否则将不会打包
       // ----------------------------------
       externals: [
-        /^react\/.+$/,
-        /^react-dom\/.+$/,
-        /^lodash\/.+$/,
-        /^@babel\/runtime\/.+$/
+        // 正则表达式
+        /^(react|\$)$/i,
+        /^(react-dom|\$)$/i,
+        /^(lodash|\$)$/i,
+        /^(@babel\/runtime|\$)$/i,
       ],
       // externals: {
       //   lodash: {
