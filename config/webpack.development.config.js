@@ -15,7 +15,7 @@ const log = console.log;
 log(chalk.white('webpackf:development') + ' - ' + chalk.green('加载全局文件'));
 
 let rootDir = path.resolve(__dirname, '../');
-let app_config = require('.')(rootDir);
+let app_config = require('.')(rootDir, 'development');
 
 module.exports = async () => {
   {
